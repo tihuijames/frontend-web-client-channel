@@ -1,37 +1,22 @@
-import '../globals.css';
+import SubLayout from './layout-sub';
 
-import { Analytics } from '@vercel/analytics/react';
-import { SessionProvider } from 'next-auth/react';
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { NextUIProvider } from '@nextui-org/react';
-import { ThemeProvider as NextThemesProvider } from "next-themes";
 export const metadata = {
-  title: 'Welcome to Mitech Recruitment',
+  title: 'Welcome to Mitech Marketing',
   description:
-    'A user admin dashboard configured with Next.js, Postgres, NextAuth, Tailwind CSS, TypeScript, ESLint, and Prettier.'
+    'Mitech Marketing is a digital marketing agency that specializes in SEO, PPC, and social media marketing.',
 };
 
-export default async function RootLayout({
+
+
+
+export default function Layout({
   children
 }: {
   children: React.ReactNode;
 }) {
 
-  return (
-    <html lang="en" >
-      <body className="h-full bg-gray-50 min-w-full min-h-full">
-        <SessionProvider>
-          <NextUIProvider>
-            <NextThemesProvider attribute="class" defaultTheme='light'>
-              <main className="text-foreground bg-background">
-                {children}
-              </main>
-              <Analytics />
-              <SpeedInsights />{/* Vercel Speed Insights */}
-            </NextThemesProvider>
-          </NextUIProvider>
-        </SessionProvider>
-      </body>
-    </html>
-  );
+
+
+  return <SubLayout>{children}</SubLayout>
 }
+
